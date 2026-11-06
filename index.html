@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080b11" />
+  <title>AOI ROSA — Spider-Man: Redline</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="game-canvas" aria-label="3D city game"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Redline"><span class="brand-mark">R</span><span>REDLINE<small>NEW YORK · 02:17 AM</small></span></a>
+      <div class="district"><span class="live-dot"></span><span>HELL’S KITCHEN</span><i></i><span>SECTOR 04</span></div>
+      <div class="top-right"><span class="comms"><b></b> ENCRYPTED COMMS</span><div class="avatar">AR</div></div>
+    </header>
+
+    <section class="mission-card" id="mission-card">
+      <div class="eyebrow"><span class="eyebrow-line"></span> FIELD OPERATION <span class="mission-code">#NY-041</span></div>
+      <h1>THE <em>QUIET</em><br>PART IS OVER.</h1>
+      <p class="mission-copy">A black-site courier is moving stolen lab hardware through the district. Keep it off the street.</p>
+      <div class="mission-meta"><span class="meta-icon">⌖</span><span>THREAT LEVEL <b>MODERATE</b></span><span class="meta-divider"></span><span>1.2 KM</span></div>
+      <div class="objective"><span class="objective-check" id="objective-check">01</span><span><b id="objective-title">NEUTRALIZE THE CREW</b><small id="objective-subtitle">3 HOSTILES · LAST KNOWN POSITION</small></span><span class="objective-arrow">↗</span></div>
+      <button class="deploy-btn" id="deploy-btn"><span>DROP IN</span><span class="btn-arrow">↗</span></button>
+      <div class="mission-foot">NO BACKUP REQUESTED <span>•</span> NO SURPRISES</div>
+    </section>
+
+    <aside class="comms-card" id="comms-card">
+      <div class="comms-heading"><span class="comms-wave">◖)))</span><span>AVENGERS CHANNEL</span><span class="comms-time">LIVE</span></div>
+      <div class="comms-person"><span class="steve-avatar">SR</span><span><b>STEVE ROGERS</b><small>CAPTAIN AMERICA</small></span></div>
+      <p id="comms-line">“Aoi, status?”</p>
+      <div class="comms-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </aside>
+
+    <section class="hud hidden" id="hud">
+      <div class="status-panel"><div class="status-head"><span>AOI ROSA DE ALMEIDA</span><span class="status-live">FIELD ACTIVE</span></div><div class="health-row"><span class="health-label">VITALS</span><div class="health-track"><i id="health-fill"></i></div><b id="health-value">100</b></div><div class="suit-row"><span>SUIT INTEGRITY</span><div class="suit-track"><i id="suit-fill"></i></div><b id="suit-value">100</b></div></div>
+      <div class="encounter-panel"><div class="encounter-kicker">ACTIVE THREAT <span>01 / 01</span></div><div class="encounter-name" id="encounter-name">THE <b>COURIER</b></div><div class="enemy-health"><i id="enemy-fill"></i></div><div class="enemy-foot"><span>ARMORED · HOSTILE</span><span id="enemy-health-value">100%</span></div></div>
+      <div class="objective-hud"><span class="target-diamond">◇</span><span><b id="hud-objective">DISABLE THE CREW</b><small id="hud-distance">140 M · ROOFTOP ACCESS</small></span></div>
+      <div class="reticle" id="reticle"><i></i></div>
+      <div class="sense-flash" id="sense-flash"><span>!</span></div>
+      <div class="toast" id="toast"></div>
+    </section>
+
+    <div class="controls-hint" id="controls-hint"><span>W A S D</span> MOVE <i></i><span>SPACE</span> JUMP <i></i><span>HOLD E</span> WEB SWING <i></i><span>CLICK</span> WEB SHOT <i></i><span>F</span> STRIKE <i></i><span>RMB</span> LOOK</div>
+    <div class="crosshair-label" id="crosshair-label">THREAT IN RANGE</div>
+    <div class="interaction" id="interaction"><span class="keycap">E</span><span>HOLD TO SWING</span></div>
+    <div class="subtitles" id="subtitles"></div>
+    <div class="objective-complete" id="objective-complete"><span class="complete-icon">✓</span><small>THREAT CONTAINED</small><b>THE CITY CAN BREATHE.</b><button id="continue-btn">KEEP MOVING <span>↗</span></button></div>
+    <div class="loading" id="loading"><div class="loading-mark">R</div><span>CONNECTING TO THE CITY</span><i></i></div>
+    <footer class="bottom-ui"><div class="coords">40°45'58.9"N&nbsp; 73°59'10.3"W</div><div class="objective-status"><span class="status-dot"></span><span id="status-text">OPERATION ACTIVE</span></div><div class="build-tag">AOI ROSA <span>·</span> 01</div></footer>
+  </main>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
